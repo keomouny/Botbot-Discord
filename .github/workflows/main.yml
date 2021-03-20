@@ -23,13 +23,13 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          npm run build
-          npm run start
+          npm run build --if-present
+          npm run start --if-present
 
       - name: "Deploy to Azure Web App"
         uses: azure/webapps-deploy@v2
         with:
           app-name: "bot-discord-mouny"
           slot-name: "production"
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_4c7fb1bb70b14496adb203f704eae824 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_6f31a1e31b9d4ee5960466f91935729f }}
           package: .
