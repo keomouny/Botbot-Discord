@@ -9,7 +9,6 @@ export class Main {
   }
 
   static start(): void {
-    console.log('client running')
     this._client = new Client();
 
     this._client.login(
