@@ -20,6 +20,12 @@ jobs:
         with:
           node-version: "12.x"
 
+      - name: Make envfile
+        use: SpicyPizza/create-envfile@v1
+        with:
+          envkey_TOKEN: ${{ secrets.TOKEN }}
+          file_name: .env
+
       - name: npm install, build, and test
         run: |
           npm install
